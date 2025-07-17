@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonoon</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      color: white;
+      background: black;
+    }
+
+    .section {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+.subscribe {
+  background: #000;
+  color: white;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subscribe h2 {
+  font-size: clamp(24px, 5vw, 48px); /* Reduced max size from 100px to 48px */
+  margin-bottom: 30px;
+}
+
+.subscribe form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.subscribe input[type="text"] {
+  font-size: clamp(14px, 2.5vw, 24px); /* Reduced max size from 36px to 24px */
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.subscribe button {
+  font-size: clamp(14px, 2.5vw, 24px); /* Reduced max size from 36px to 24px */
+  padding: 14px 28px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe button:hover {
+  background: #ddd;
+}
+
+
+#success-message {
+  display: none;
+  color: white;
+  font-size: clamp(24px, 4vw, 60px);
+  margin-top: 40px;
+}
+
+
+
+    /* Section 1 - Hero */
+    .hero {
+      background: url('dreamy-bg.jpg') no-repeat top center;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background-position: center center;
+    }
+
+    .hero-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .title {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(80px, 12vw, 160px);
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .left-text {
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      transform: translateY(-50%);
+      font-size: clamp(20px, 3vw, 36px);
+      line-height: 1.6;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .button-stack {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    .button {
+      font-size: clamp(14px, 1.8vw, 24px);
+      font-family: 'Playfair Display', serif;
+      padding: 16px 40px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .button-black {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .button-white {
+      background-color: white;
+      color: black;
+      border: none;
+    }
+    a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+    .button-black:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .button-white:hover {
+      background-color: #f0f0f0;
+      
+    }
+
+    /* Section 2 */
+    .about {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .about h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      font-size: 20px;
+      color: #ccc;
+    }
+
+    /* Section 3 */
+    .contact {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      max-width: 600px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero -->
+  <section class="section hero">
+    <div class="hero-content">
+      <div class="title">jonoon</div>
+
+      <div class="left-text">
+        THE LATEST FROM<br>JONOON
+      </div>
+
+      <div class="button-stack">
+      <a href="#subscribe" class="button button-black">Subscribe now</a>
+        <a href="#about" class="button button-white">Read now</a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: About -->
+    <section class="section about" id="about">
+
+    <div>
+      <h2>About Jonoon</h2>
+      <p>
+        Jonoon is a digital magazine celebrating expression, depth, and beauty in its purest form.
+        From thought-provoking articles to visual which is aesthetically pleasing, we bring you content that moves the soul.
+        
+      </p>
+    </div>
+  </section>
+
+  <!-- Blank Page 1 -->
+<section class="section" style="background: black;"></section>
+
+<!-- Blank Page 2 -->
+<section class="section" style="background: black;"></section>
+
+<!-- Blank Page 3 -->
+<section class="section" style="background: black;"></section>
+
+
+<!--section 4: subscribe now-->
+<section class="section subscribe" id="subscribe">
+  <h2 id="subscribe-heading">Subscribe to Jonoon</h2>
+ <form id="subscribe-form">
+  <input type="email" name="email" placeholder="Enter your email" required />
+  <button type="submit">Subscribe</button>
+</form>
+
+  <p id="success-message">Submitted Successfully!</p>
+</section>
+
+
+<script>
+  document.getElementById("subscribe-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const emailInput = document.querySelector('input[name="email"]');
+    const email = emailInput.value.trim();
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Prepare JSON data for SheetDB
+    const data = {
+      data: [
+        {
+          email: email
+        }
+      ]
+    };
+
+    fetch("https://sheetdb.io/api/v1/hyui6b8z08jwt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Success UI feedback
+        document.getElementById("subscribe-form").style.display = "none";
+        document.getElementById("subscribe-heading").style.display = "none";
+        document.getElementById("success-message").style.display = "block";
+      } else {
+        alert("There was an error submitting the form.");
+      }
+    })
+    .catch(error => {
+      alert("There was a network error.");
+      console.error(error);
+    });
+  });
+</script>
+
+</body>
+</html>
+
